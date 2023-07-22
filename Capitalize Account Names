@@ -1,0 +1,41 @@
+public class CapitalizeAccounts {
+    public static void capitalizeAcc(List<Account> acct){
+        /*get the list of account names as input parameter
+         * run a for loop and split each name by the space
+         * use capitalize function 
+         * join the name
+         * add it to the names list and update*/
+        List<Account> joinedName = new List<Account>();
+        
+        for(Account acc:acct){
+            List<String> splitName= acc.name.split(' ');
+            
+            for(Integer i=0;i<splitName.size();i++){
+                
+                splitName[i] =splitName[i].capitalize();
+            }
+            acc.name= String.join(splitName,' ');
+            
+            joinedName.add(new Account(Id=acc.Id,name=acc.name)) ;
+            
+        }
+        
+        
+        update joinedName;
+    }
+}
+
+Test the method call  in anonymous console
+
+List<Account> acc= new List<Account>();
+for(Integer i=0;i<=10;i++){
+    acc.add(new Account(name ='mas the greatest is '+i,
+                        industry='Agriculture'));
+}
+insert acc;
+
+List<Account> acc=[select id,name from
+                  account where name like 
+                  '%mas%'];
+
+CapitalizeAccounts.capitalizeAcc(acc);
